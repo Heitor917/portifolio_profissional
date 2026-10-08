@@ -172,22 +172,7 @@ const status =
   document.getElementById("status") ||
   document.getElementById("formStatus");
 
-if (form) {
 
-  form.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    if (status) {
-      status.textContent =
-        "Mensagem validada. Para envio real, conecte o formulário a um serviço de e-mail.";
-    }
-
-    form.reset();
-
-  });
-
-}
 const telefone = document.getElementById("telefone");
 
 telefone.addEventListener("input", function () {
