@@ -1,0 +1,716 @@
+
+
+:root {
+  --bg: #03151f;
+  --bg-alt: #021119;
+  --card: #062633;
+  --card-dark: #05232f;
+  --header: rgba(2, 15, 22, 0.95);
+  --text: #f2fbff;
+  --muted: #a9cbd4;
+  --primary: #00d9ff;
+  --primary-hover: #5eeaff;
+  --secondary: #44e6bf;
+  --accent: #ff9d2e;
+  --border: #12485b;
+  --input: #03151f;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+body.light {
+  --bg: #eaf8fc;
+  --bg-alt: #dceff5;
+  --card: #ffffff;
+  --card-dark: #f6fcff;
+  --header: rgba(236, 249, 253, 0.96);
+  --text: #092531;
+  --muted: #456875;
+  --primary: #007e9a;
+  --primary-hover: #009fc3;
+  --secondary: #08795e;
+  --accent: #d56c00;
+  --border: #a7d4df;
+  --input: #ffffff;
+  --shadow: rgba(18, 71, 87, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  width: 88%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Orbitron", sans-serif;
+  color: var(--primary);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--text);
+  transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn,
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+}
+
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(0, 217, 255, 0.13), transparent 35%),
+    linear-gradient(135deg, var(--card-dark), var(--bg) 60%);
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--accent);
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(48px, 7vw, 80px);
+  color: var(--primary);
+  line-height: 1;
+}
+
+.hero h2 {
+  min-height: 40px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 24px;
+  margin: 15px 0 20px;
+}
+
+.hero p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+  background: var(--primary);
+  color: var(--bg);
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  color: var(--bg);
+}
+
+
+.profile-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.online {
+  color: var(--secondary);
+}
+
+.profile-circle {
+  width: 170px;
+  height: 170px;
+  margin: 35px auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  font-family: "Orbitron", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  border: 2px solid var(--primary);
+  background: var(--card-dark);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.12);
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.profile-info p {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-dark);
+  text-align: center;
+  font-size: 13px;
+}
+
+.profile-info span {
+  display: block;
+  color: var(--primary);
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+
+section {
+  padding: 95px 0;
+}
+
+.dark-section {
+  background: var(--bg-alt);
+}
+
+.section-title {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.section-title > span {
+  color: var(--accent);
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.section-title p {
+  color: var(--primary);
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 38px;
+}
+
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card h3 {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 12px;
+}
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+}
+
+.skill-box h3 {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.skill-name span:last-child {
+  color: var(--primary);
+}
+
+.bar {
+  height: 9px;
+  background: var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.soft-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.soft-skills span,
+.tech span {
+  padding: 8px 13px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text);
+}
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--card-dark);
+  transition: 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  height: 180px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle, rgba(0, 217, 255, 0.15), transparent 45%),
+    var(--card);
+}
+
+.project-image > span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: var(--primary);
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.sonar {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  position: relative;
+}
+
+.sonar::before {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+}
+
+.sonar::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 45px;
+  left: 45px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 15px var(--primary);
+}
+
+.project-text {
+  padding: 24px;
+}
+
+.project-text small {
+  color: var(--accent);
+}
+
+.project-text h3 {
+  font-family: "Orbitron", sans-serif;
+  margin: 6px 0 10px;
+}
+
+.project-text p {
+  color: var(--muted);
+}
+
+.tech {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.tech span {
+  font-size: 12px;
+  padding: 6px 9px;
+}
+
+
+.github-box {
+  margin-top: 35px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+.github-box span {
+  color: var(--primary);
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.github-box h3 {
+  font-family: "Orbitron", sans-serif;
+  margin: 4px 0;
+}
+
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+}
+
+.contact-text h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.contact-text p {
+  margin-bottom: 22px;
+  color: var(--muted);
+}
+
+form {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card-dark);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 17px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--input);
+  color: var(--text);
+  outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--primary);
+}
+
+form .btn {
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 8, 13, 0.78);
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+.modal-content h2 {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 12px;
+}
+
+.modal-content p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  padding: 30px 0;
+  background: #010b10;
+  color: #9fc3cc;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: center;
+}
+
+.footer-content strong {
+  font-family: "Orbitron", sans-serif;
+  color: #eafaff;
+}
+
+@media (max-width: 900px) {
+
+  .hero-content,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid,
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-card {
+    max-width: 550px;
+  }
+
+  nav {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    padding: 20px 6%;
+    background: var(--header);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .nav {
+    min-height: 70px;
+  }
+
+  .about-grid,
+  .projects-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+
+  .profile-info {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons,
+  .github-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section {
+    padding: 75px 0;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+}
